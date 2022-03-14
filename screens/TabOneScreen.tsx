@@ -1,15 +1,29 @@
-import { StyleSheet } from 'react-native';
-
+import { FlatList, StyleSheet } from 'react-native';
+import { Profiler} from 'react'
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import  UserListItem  from '../components/UserListItem'
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+import data_user from '../data/data_users'
+
+export default function TabOneScreen() {
+
+  // const [userData, setUserData] = useState<any>()
+  // useEffect(() => {
+  //   fetch("https://reqres.in/api/users")
+  //                 .then((response) =>  {setUserData(response.json())})   
+  // }, []); 
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <FlatList 
+        style={{width:'100%'}}
+        data={data_user[0].data}
+        renderItem = {({item})=><UserListItem profile={item}/>}
+        // keyExtractor={(item) =>item.id}
+      />
+      {/* <UserListItem profile={data_user[0].data[0]}/>   */}
     </View>
   );
 }
@@ -19,6 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'white'
   },
   title: {
     fontSize: 20,
