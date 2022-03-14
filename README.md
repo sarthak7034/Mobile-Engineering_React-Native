@@ -2,8 +2,6 @@
 
 ## Context
 
-You are joining Kadmos as the Mobile Engineer of team Hercules 🦸, a team of heroes and heroines who change the way our customers operate by developing innovative financial products.
-
 In this challenge, you will implement a basic React Native application that displays the list of users of one of our customers and allows us to get some details for each of them on a different view. You will need to add to the app a navigation bar to present the list of users and the app settings. In the settings view, you will allow the user to change the language of the entire app.
 
 ## Your tasks
