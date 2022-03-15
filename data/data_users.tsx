@@ -1,11 +1,4 @@
 
-// const fetchUserData = async() => {
-//     const result = await fetch("https://reqres.in/api/users");
-//     return result.json()
-                  
-// }
-        
-// export default fetchUserData         
 export default [
     {
         "page": 1,
